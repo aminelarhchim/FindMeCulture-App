@@ -1,0 +1,7 @@
+matplotlib =='3.1.1'
+pandas =='0.25.3'
+numpy =='1.17.4'
+tkinter=='8.6'
+geopy=='1.20.0'
+geopandas=='0.6.0'
+re=="2.2.1"

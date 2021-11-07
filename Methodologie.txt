@@ -1,0 +1,30 @@
+Méthodologie du projet - étapes et organisation générale
+
+Notre objectif était initialement d'obtenir une application où l'utilisateur entre sa localisation et l'heure à laquelle il souhaite aller au musée, et reçoit des suggestions.
+Cependant la gestion des données concernant le temps était très difficile donc nous avons décidé de simplement afficher les horaires d'ouverture de chaque musée.
+En effet, les dates et horaires d'ouvertures n'étaient pas présentés dans un format standardisé dans la base de données utilisée.
+A partir de cet objectif initial, nous avons pu progresser et améliorer progressivement le produit.
+
+Pour ce projet, il a fallu diviser le produit à obtenir en différentes fonctionnalités, les premières permettant d'obtenir un MVP.
+
+Dans un premier temps, nous avons décidé de traiter uniquement une base de données concernant les musées de France.
+Il a fallu extraire les informations du fichier Excel, construire une base de données (Dataframe) avec le module pandas (cf requirements) en utilisant la programmation objet.
+Puis des fonctions filtre ont été écrites, qui permettent à l'utilisateur de choisir où il veut aller au musée.
+Ces programmes demandent donc en entrée un endroit, déterminent son type (région/ département/ ville) et extraient de la dataframe avec tous les musées de France ceux qui sont dans cet endroit.
+D'autre part, des fonctions de comptage associées au module Matplotlib.Pyplot ont permis d'effectuer une première étude statistique de la répartition des musées en France, en fonction de la géographie, mais aussi de la démographie.
+On a pu tracé des diagrammes circulaires et des diagrammes en barres (histogrammes) donnant les endroits (régions et villes) où il y a le plus de musées, le classement des régions en fonction du rapport musée/habitant et la répartition des musées dans les villes.
+
+Une amélioration a consisté à introduire la géolocalisation de l'utilisateur.
+Avec le module geopy on convertit les adresses des musées et celle de l'utilisateur en coordonnées géographiques (latitude, longitude).
+On calcule la distance de l'utilisateur aux musées et on indique les musées les plus proches (pour lesquels la distance est inférieure à une distance choisie par l'utilisateur).
+
+Une autre amélioration a été le recours à l'interface graphique Tkinter pour le choix du musée.
+
+Nous avons ensuite décidé de traiter une base de données contenant les festivals en France de façon analogue.
+De même les données ont été extraites du fichier Excel sous forme de Dataframe.
+Des filtres permettent de faire des sélections par endroit mais aussi par période de l'année (mois) et par domaine.
+Dans l'interface graphique l'utilisateur peut désormais choisir un département, puis des domaines et une période et voit s'afficher les informations sur les festivals correspondants.
+Des études statistiques ont également été effectuées pour obtenir de nouveaux diagrammes en bâtons et circulaires.
+Elles portent sur le nombre de festivals par région, par mois et par domaine, ainsi que sur les départements ayant plus ou moins de festivals (intervalles).
+
+Finalement le produit final présente trois parties : le renvoi de musées à proximité d'une adresse donnée, le renvoi de festivals qui répondent à certains critères, et la détermination de statistiques sur les bases de données.
